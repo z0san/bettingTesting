@@ -43,7 +43,7 @@ while (i < len(odds)):
         while (i < len(odds) and odds[i]["class"][0] != "sel"):
 
             if ("data-bk" in odds[i].attrs):
-                currentHorseOdds.append({"data-bk": odds[i]["data-bk"], "odds": odds[i].p})
+                currentHorseOdds.append({"data-bk": odds[i]["data-bk"], "odds": odds[i].string})
 
             i+= 1
 
