@@ -68,9 +68,3 @@ def downloadOdds(url):
         print(i)'''
 
     return odds
-
-
-
-url = input("Please coppy and past the url of the data you would like to extract:  ")
-
-print(downloadOdds(url))
