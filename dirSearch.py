@@ -2,10 +2,10 @@ from bs4 import BeautifulSoup
 import requests
 from mainDownloader import downloadOdds
 
-debug = True
+debug = False
 
 def findLinks():
-    sports = ["american-footbal", "athletics/tokyo-2020", "austrailian-rules", "awards", "badminton", "baseball", "basketball", "bowls", "boxing", "cheltenham-festival", "chess", "cricket", "cycling", "darts", "football", "gaelic-games", "golf", "greyhounds", "handball", "harness-racing", "horse-racing", "ice-hockey", "novelty", "politics", "pool", "rugby-league", "rugby-union", "snooker", "tv", "table-tennis", "tennis", "ufc-mma", "vollyball", "winter-sports"]
+    sports = ["american-footbal", "athletics/tokyo-2020", "austrailian-rules", "awards", "badminton", "baseball", "basketball", "bowls", "boxing", "chess", "cricket", "cycling", "darts", "football", "gaelic-games", "golf", "greyhounds", "handball", "harness-racing", "horse-racing", "ice-hockey", "novelty", "politics", "pool", "rugby-league", "rugby-union", "snooker", "tv", "table-tennis", "tennis", "ufc-mma", "vollyball", "winter-sports"]
 
     data = []
 
@@ -22,12 +22,11 @@ def findLinks():
 
         soup = BeautifulSoup(page_response.content, "html.parser")
 
-        data = []
-
         odds = soup.find("tbody", {"id": "t1"})
 
         if (odds is None):
             foundLinks = []
+            #the case where there are simply match times listed out such as for horse racing and dog racing
             if(soup.find("tr", {"class": "match-on"}) is None):
                 links = soup.findAll("a")
                 for link in links:
@@ -35,6 +34,7 @@ def findLinks():
                         if ("results" not in link["class"]):
                             if debug: print("good link: " + link["href"])
                             foundLinks.append(link["href"])
+            #the case where there are matches at are listed out between two teams and sometimes can be in play at the time of page loading
             else:
                 matches = soup.findAll("tr", {"class": "match-on"})
                 matches += soup.findAll("tr", {"class": "match-on no-top-border"})
