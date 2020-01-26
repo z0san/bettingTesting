@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 from mainDownloader import downloadOdds
 
-debug = True
+debug = False
 
 def findSports():
     sports = ["american-football", "athletics/tokyo-2020", "australian-rules", "awards", "badminton", "baseball", "basketball", "bowls", "boxing", "chess", "cricket", "cycling", "darts", "football", "gaelic-games", "golf", "greyhounds", "handball", "harness-racing", "horse-racing", "ice-hockey", "novelty", "politics", "pool", "rugby-league", "rugby-union", "snooker", "tv", "table-tennis", "tennis", "ufc-mma", "volleyball", "winter-sports"]
@@ -15,7 +15,7 @@ def findSports():
 
 def findLinks(i):
     url = "https://oddschecker.com/" + i
-    print("testing new url: ", url)
+    #print("testing new url: ", url)
     page_response = requests.get(
         url,
         timeout=10,
@@ -50,6 +50,6 @@ def findLinks(i):
 
     return None
 
-print(findSports())
+#print(findSports())
 
 #print(findLinks("awards"))

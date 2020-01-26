@@ -59,7 +59,7 @@ def downloadOdds(url):
         if ("data-bk" in i.attrs):
             print(i)'''
 
-    print()
+    #print()
 
     for i in range(len(horses)):
         data.append({"name": horses[i].a["data-name"], "odds": horseData[i]})
@@ -67,4 +67,7 @@ def downloadOdds(url):
     '''for i in data:
         print(i)'''
 
-    return odds
+    return data
+
+
+#print(downloadOdds("https://oddschecker.com/american-football/college-football/kai-west-at-aina-east/winner"))
