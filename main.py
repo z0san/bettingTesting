@@ -16,7 +16,10 @@ for i in data:
     done = []
     for link in links:
         if link not in done:
-            downloadedOdds += [{link: downloadOdds("https://oddschecker.com/" + link)}]
+            try:
+                downloadedOdds += [{link: downloadOdds("https://oddschecker.com/" + link)}]
+            except:
+                print("Error downloading ", "https://oddschecker.com/" + link)
             done.append(link)
     odds[key] = downloadedOdds
 
