@@ -26,7 +26,7 @@ def downloadOdds(url):
     if (odds is not None):
         odds = odds.find_all('td')
     else:
-        print("No odds found!")
+        #print("No odds found!")
         return False
 
 
