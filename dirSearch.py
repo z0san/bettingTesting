@@ -5,7 +5,7 @@ from mainDownloader import downloadOdds
 debug = False
 
 def findSports():
-    sports = ["american-football", "athletics/tokyo-2020", "australian-rules", "awards", "badminton", "baseball", "basketball", "bowls", "boxing", "chess", "cricket", "cycling", "darts", "football", "gaelic-games", "golf", "greyhounds", "handball", "harness-racing", "horse-racing", "ice-hockey", "novelty", "politics", "pool", "rugby-league", "rugby-union", "snooker", "tv", "table-tennis", "tennis", "ufc-mma", "volleyball", "winter-sports"]
+    sports = ["american-football", "athletics/tokyo-2020", "australian-rules", "awards", "badminton", "baseball", "basketball", "boxing", "chess", "cricket", "cycling", "darts", "football", "gaelic-games", "golf", "greyhounds", "handball", "harness-racing", "horse-racing", "ice-hockey", "novelty", "politics", "pool", "rugby-league", "rugby-union", "snooker", "tv", "table-tennis", "tennis", "ufc-mma", "volleyball", "winter-sports"]
     data = []
 
     for i in sports:
