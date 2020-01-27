@@ -41,7 +41,7 @@ def downloadOdds(url):
             odds.remove(odds[i])
         elif ("data-bk" in odds[i].attrs):
             currentHorseOdds = []
-            while (i < len(odds) and odds[i]["class"][0] != "sel"):
+            while (i < len(odds) and "class" in odds[i].attrs and odds[i]["class"][0] != "sel"):
 
                 if ("data-bk" in odds[i].attrs):
                     currentHorseOdds.append({"data-bk": odds[i]["data-bk"], "odds": odds[i].string})

@@ -22,7 +22,9 @@ for i in data:
 
 print("All odds have been downloaded")
 
-print(odds)
+#print(odds)
 
 with open('odds.json', 'w') as json_file:
   json.dump(odds, json_file, sort_keys=True, indent=4)
+
+print("All odds have been downloaded and can be found in the 'odds.json' file!")
